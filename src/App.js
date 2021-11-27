@@ -1,21 +1,17 @@
-import {Switch, Route} from 'react-router-dom'
-import './App.css';
-import Header from './Components/Header'
-import Home from './Home'
-import Orders from './Orders'
+import React from 'react'
+// import {Switch, Route} from 'react-router-dom'
+import UserCards from './pages/UserCards'
 
 function App() {
+
     return (
         <div className="App">
-            <Header />
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route>
-                        <Orders />
-                    </Route>
-                </Switch>
+
+                <UserCards />
+
+            <div className="container__footer">
+                <button className={"btn__list"}>Listone</button>
+            </div>
         </div>
     );
 }

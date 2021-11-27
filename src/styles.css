@@ -1,0 +1,57 @@
+body {
+    margin: 0 auto;
+
+    height: 100vh;
+}
+
+#root {
+    width: 100%;
+    text-align: center;
+}
+.App {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80% 20%;
+    padding: 2em
+}
+
+.container__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.container__footer {
+
+}
+
+
+.UserCard {
+    width: 6em;
+    height: 10em;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 2em;
+}
+
+.btn__list {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 100%;
+    padding: 0px;
+
+}
+
+.UserCard__dishes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.userCard__dishes__code {
+    margin: 0.2em;
+}
