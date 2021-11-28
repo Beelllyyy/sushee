@@ -1,57 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
 body {
     margin: 0 auto;
-
-    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #root {
-    width: 100%;
-    text-align: center;
+    margin: 0;
 }
+
 .App {
     margin: 0;
     height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80% 20%;
-    padding: 2em
+    grid-template-rows: 90% 10%;
 }
 
 .container__main {
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-direction: column;
+    align-content: start;
     align-items: center;
+    overflow: scroll;
+    padding-top: 1em;
 }
 
 .container__footer {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 .UserCard {
-    width: 6em;
-    height: 10em;
-    border: 2px solid grey;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 82%;
+    margin: 0.7em 0;
+    border: 2px solid #313131;
     border-radius: 10px;
-    margin: 2em;
+    padding: 0.7em 1em;
+
 }
 
-.btn__list {
+.UserCard__avatar__container {
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+}
+.UserCard__avatar__img {
     width: 50px;
     height: 50px;
-    border: 0;
-    border-radius: 100%;
-    padding: 0px;
 
+}
+
+.UserCard__info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.UserCard__name {
+    font-weight: bold;
+    margin: 0;
 }
 
 .UserCard__dishes {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    overflow: scroll;
 }
 
 .userCard__dishes__code {
-    margin: 0.2em;
+    margin: 0.3em;
+
+    padding: 0.2em 0.5em;
+    font-size: 1.2em;
+    min-width: 0.8em;
+    white-space: nowrap;
+
+    border-radius: 25px;
+    background-color: #313131;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+
+.NewUser {
+    display: flex;
+    align-items: center;
+}
+
+
+.footer__list {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 100%;
+    padding: 0px;
+    text-align: center;
 }
