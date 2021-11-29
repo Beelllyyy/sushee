@@ -4,33 +4,77 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
 
-
     const [userList, setUserList] = useState(
         [
             {
                 pos: 0,
                 name: "Bee",
-                dishes: ["G1","N3","N4",5]
+                dishes:
+
+                    [{code: "G1",
+                        qnt: 1},
+                        {code: "N3",
+                            qnt: 3},
+                        {code: "N4",
+                            qnt: 2},
+                        {code: "F5",
+                            qnt: 2}]
+
             },
             {
                 pos: 1,
                 name: "Gino",
-                dishes: ["43","56","2"]
+                dishes:
+
+                    [{code: "43",
+                        qnt: 1},
+                        {code: "56",
+                            qnt: 1},
+                        {code: "2",
+                            qnt: 1}]
+
             },
             {
                 pos: 2,
                 name: "Pippo",
-                dishes: ["A34","U13","U65","T4-bis","43","43",]
+                dishes:
+
+                    [{code: "A34",
+                        qnt: 1},
+                        {code: "U13",
+                            qnt: 1},
+                        {code: "U65",
+                            qnt: 1},
+                        {code: "T4-bis",
+                            qnt: 1},
+                        {code: "A43",
+                            qnt: 2}]
+
             },
             {
                 pos: 3,
                 name: "Franco",
-                dishes: ["23","5","6","1"]
+                dishes:
+
+                    [{code: "U23",
+                        qnt: 1},
+                        {code: "F5",
+                            qnt: 1},
+                        {code: "U6",
+                            qnt: 1},
+                        {code: "U1",
+                            qnt: 1}]
+
             },
             {
                 pos: 4,
                 name: "Beppe",
-                dishes: ["2","4","5"]
+                dishes:
+
+                    [{code:"N2", qnt: 1},
+                        {code:"N4", qnt: 1},
+                        {code:"F5", qnt: 1}]
+
             }
         ])
 
@@ -39,10 +83,17 @@ function ContextProvider({children}) {
         setUserList(prevUserList => [...prevUserList, newUser])
     }
 
+    function removeUser(pos) {
+        setUserList(prevList => prevList.filter(el => !(prevList.indexOf(el) === pos))
+
+        )
+    }
+
     return(
         <Context.Provider value={{
             userList,
-            addNewUser
+            addNewUser,
+            removeUser
         }}>
             {children}
         </Context.Provider>

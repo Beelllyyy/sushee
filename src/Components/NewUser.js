@@ -7,8 +7,9 @@ export default function NewUser() {
     let userNameInput = React.createRef()
 
     function handleAddUser() {
-        console.log(`IL TIPO E' ${typeof userNameInput.current.value}`)
-        addNewUser(userNameInput.current.value)
+        const newName = userNameInput.current.value
+        newName && (addNewUser(newName))
+        userNameInput.current.value = ""
     }
 
 
@@ -19,7 +20,6 @@ export default function NewUser() {
                         <input type="text" ref={userNameInput}/>
                         <span>X</span>
                 </div>
-
         </div>
     )
 
