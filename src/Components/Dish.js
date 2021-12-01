@@ -20,17 +20,17 @@ export default function Dish(props) {
     return(
         <div className='dish-box' ref={refDish} onClick={handleEdit}>
             <div className='dish-numbers'>
-                <div className="userCard__dishes__code">
+                <div className="dish">
                     {code}
                 </div>
                 x
-                <div className='dish-minus userCard__dishes__code'>
+                <div className='dish-minus dish'>
                     {isEditing ? <span onClick={() => subQnt(user, code)}>-</span> : null}
                 </div> {/*temporary classes userCard__* */}
-                <div className="userCard__dishes__code">
+                <div className="dish">
                     {qnt}
                 </div>
-                <div className='dish-plus userCard__dishes__code'>
+                <div className='dish-plus dish'>
                     {isEditing ? <span onClick={() => addQnt(user, code)}>+</span> : null}
                 </div>
             </div>

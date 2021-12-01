@@ -127,9 +127,27 @@ function ContextProvider({children}) {
         } else {
             return 'existing'
         }
+    }
 
+    function getListone() {
+        let objectone = {}
+        // this will create an object with one key per dish and quantities in corresponding values
+        for (let i=0; i<userList.length; i++) {
+            const target = userList[i].dishes
+            for (let j=0; j<target.length; j++) {
+                const code = userList[i].dishes[j].code
+                const qnt = userList[i].dishes[j].qnt
+                objectone[code] = objectone[code] ? objectone[code] += qnt : objectone[code] = qnt
+            }
+        }
+        // convert listone object into mappable array of type [{code:..,qnt:...},...]
+        const listone = []
+        Object.keys(objectone).forEach(key => listone.push({
+            code: key,
+            qnt: objectone[key]
+        }))
 
-
+        return listone
     }
 
     return(
@@ -139,7 +157,8 @@ function ContextProvider({children}) {
             removeUser,
             addQnt,
             subQnt,
-            addDish
+            addDish,
+            getListone
         }}>
             {children}
         </Context.Provider>

@@ -34,7 +34,7 @@ export default function NewDish(props) {
             </span>
         </div> :
         <div
-            className="userCard__dishes__code"
+            className="dish"
             onClick={() => setAdding(true)}
         >+</div>
 

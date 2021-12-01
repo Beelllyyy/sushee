@@ -7,9 +7,9 @@ import useOnClickOutside from "../Hooks/useOutsideClick"
 function User({user}) {
     const {removeUser} = useContext(Context)
     const [isEditing, setEditing] = useState(false)
-    const dishesEl = user.dishes.map(dish => <span key={dish.code} className="userCard__dishes__code">{dish.code} {dish.qnt > 1 ? <span> x{dish.qnt}</span> : null}</span>)
+    const dishesEl = user.dishes.map(dish => <span key={dish.code} className="dish">{dish.code} {dish.qnt > 1 ? <span> x{dish.qnt}</span> : null}</span>)
     const userPath = `users/${user.name}`
-    const newDishEl = <span className="userCard__dishes__code userCard__dishes__new"> </span>
+    const newDishEl = <span className="dish userCard__dishes__new"> </span>
 
     const refUser = useRef()
     useOnClickOutside(refUser, () => setEditing(false))

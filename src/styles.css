@@ -96,7 +96,7 @@ a {
     border-radius: 50%;
 }
 
-.userCard__dishes__code {
+.dish {
     margin: 0.3em;
 
     padding: 0.2em 0.5em;
@@ -121,7 +121,7 @@ a {
 }
 
 
-.footer__list {
+.footer-btn {
     width: 50px;
     height: 50px;
     border: 0;
@@ -161,4 +161,17 @@ a {
 }
 .dish-numbers{
     display: flex;
+}
+
+.listone-container{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.listone-items{
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+
 }
