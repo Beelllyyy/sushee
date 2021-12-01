@@ -1,13 +1,17 @@
 import React from 'react'
-// import {Switch, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import UserCards from './pages/UserCards'
+import UserPage from './pages/UserPage'
 import Footer from './pages/Footer'
 function App() {
 
     return (
         <div className="App">
+            <Routes>
+                <Route path='/' element={<UserCards />} />
+                <Route path='/users/:userName' element={<UserPage />} />
+            </Routes>
 
-            <UserCards />
             <Footer />
         </div>
     );

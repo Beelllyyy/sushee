@@ -13,7 +13,6 @@ export default function UserCards() {
             {userElements}
             <NewUser />
         </div>
-
     )
 }
 

@@ -89,11 +89,57 @@ function ContextProvider({children}) {
         )
     }
 
+    function addQnt(userName, code) {
+        const userIndex = userList.findIndex( user => user.name === userName)
+        const dishIndex = userList[userIndex].dishes.findIndex(dish => dish.code === code)
+        const updatedUser = userList[userIndex]
+        updatedUser.dishes[dishIndex].qnt = updatedUser.dishes[dishIndex].qnt + 1
+        const updatedList = userList.slice()
+        updatedList[userIndex] = updatedUser
+
+        setUserList(updatedList)
+    }
+    function subQnt(userName, code) {
+        // Retrieve object indexing
+        const userIndex = userList.findIndex( user => user.name === userName)
+        const dishIndex = userList[userIndex].dishes.findIndex(dish => dish.code === code)
+        // Build updated user info
+        const updatedUser = userList[userIndex]
+        updatedUser.dishes[dishIndex].qnt = updatedUser.dishes[dishIndex].qnt - 1
+        if (updatedUser.dishes[dishIndex].qnt === 0) {
+            updatedUser.dishes.splice(dishIndex, 1)
+        }
+        const updatedList = userList.slice()
+        updatedList[userIndex] = updatedUser
+        setUserList(updatedList)
+    }
+
+    function addDish(userName, newCode) {
+        const userIndex = userList.findIndex( user => user.name === userName)
+        const dishIndex = userList[userIndex].dishes.findIndex(dish => dish.code === newCode)
+        if (dishIndex === -1) {
+            // if doesn't already exist
+            const updatedUser = userList[userIndex]
+            updatedUser.dishes.push({code: newCode, qnt: 1})
+            const updatedList = userList.slice()
+            updatedList[userIndex] = updatedUser
+            setUserList(updatedList)
+        } else {
+            return 'existing'
+        }
+
+
+
+    }
+
     return(
         <Context.Provider value={{
             userList,
             addNewUser,
-            removeUser
+            removeUser,
+            addQnt,
+            subQnt,
+            addDish
         }}>
             {children}
         </Context.Provider>
