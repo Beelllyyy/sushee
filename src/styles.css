@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+#root {
+    --dark: #282a36;
+    --white: #f8f8f2;
+    --green: #50fa7b;
+    --pink: #ff79c6;
+    --blue: #383a59;
+    --gray: #44475a
+}
+
 body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-}
-
-#root {
-    margin: 0;
+    color: var(--white);
 }
 
 a {
     text-decoration: none;
-    color: #313131;
 }
 
 .App {
+    background-color: var(--blue);
     margin: 0;
     height: 100vh;
     width: 100%;
@@ -23,155 +29,111 @@ a {
     grid-template-rows: 90% 10%;
 }
 
-.container__main {
-    display: flex;
-    flex-direction: column;
-    align-content: start;
-    align-items: center;
+ /* SCREEN LAYOUT */
+
+.body {
+    margin-top: 1em;
     overflow: scroll;
-    padding-top: 1em;
+    display: flex;
+    justify-content: center;
 }
-
-.container__footer {
+.Footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--dark);
 }
 
-.UserCard {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    width: 82%;
-    margin: 0.7em 0;
-    border: 2px solid #313131;
-    border-radius: 10px;
-    padding: 0.7em 1em;
+/* PAGES */
 
-    position: relative;
-
-}
-
-.UserCard__avatar__container {
-    display: flex;
-    align-items: center;
-    min-width: 60px;
-}
-.UserCard__avatar__img {
-    width: 50px;
-    height: 50px;
-
-}
-
-.UserCard__info {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.UserCard__name {
-    font-weight: bold;
-    margin: 0;
-}
-
-.UserCard__dishes {
-    width: 100%;
-    display: flex;
-    overflow: scroll;
-}
-
-.UserCard__cancel {
-    position: absolute;
-    overflow: visible;
-    top: 0%;
-    right: 0%;
-    width: 1.35em;
-    height: 1.35em;
-    border: 2px solid #a02b2b;
-    background-color: white;
-    color: #a02b2b;
-    font-weight: bold;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.dish {
-    margin: 0.3em;
-
-    padding: 0.2em 0.5em;
-    font-size: 1.2em;
-    width: min-content;
-    white-space: nowrap;
-
-    border-radius: 25px;
-    background-color: #313131;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
-
-
-.NewUser {
-    display: flex;
-    align-items: center;
-}
-
-
-.footer-btn {
-    width: 50px;
-    height: 50px;
-    border: 0;
-    border-radius: 100%;
-    padding: 0px;
-    text-align: center;
-}
-
-.UserPage__header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.UserPage__header__commands {
-    display: flex;
-    justify-content: space-between;
-}
-
-.UserPage__header__user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.UserPage__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.dish-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-
-}
-.dish-numbers{
-    display: flex;
-}
-
-.listone-container{
-    width: 90%;
+.UserList {
     display: grid;
     grid-template-columns: 1fr;
+    width: 90%;
+    gap: 1em;
+    justify-self: center;
+    overflow: scroll;
+}
+.UserPage {
+
+}
+.Listone {
+
 }
 
-.listone-items{
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
-    align-items: center;
+/* COMPONENTS*/
 
+/* Usercards */
+.UserCard {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    background-color: var(--dark);
+    border-radius: 15px;
+    padding: 0.8em 0.5em;
+}
+.last{margin-bottom: 0.5em}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-img {
+    width: 50px;
+    height: 50px;
+    filter: invert(11%) sepia(10%) saturate(1596%) hue-rotate(194deg) brightness(96%) contrast(86%);
+}
+.UserCard-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    gap: 0.4em;
+}
+.info-name{
+    margin: 0;
+    color: var(--white);
+    font-size: 1.3em;
+}
+.info-dish-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    overflow: scroll;
+}
+
+.dish-el{
+    padding: 0.2em 0.5em;
+    font-size:  1.1em;
+    width: min-content;
+    white-space: nowrap;
+    border-radius: 25px;
+    background-color: var(--green);
+    color: var(--dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BUTTONS */
+.icon-add {
+    width: min-content;
+    padding: 0.8em 0.5em;
+    font-size:  1.4em;
+    font-weight: bold;
+    white-space: nowrap;
+    border-radius: 15px;
+    background-color: var(--pink);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-btn {
+    background-color: var(--green);
+    color: var(--dark);
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 0.4em 1em;
 }

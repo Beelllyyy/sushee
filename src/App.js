@@ -1,6 +1,6 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
-import UserCards from './pages/UserCards'
+import UserList from './pages/UserList'
 import UserPage from './pages/UserPage'
 import Listone from './pages/Listone'
 import Footer from './pages/Footer'
@@ -8,11 +8,13 @@ function App() {
 
     return (
         <div className="App">
-            <Routes>
-                <Route path='/' element={<UserCards />} />
-                <Route path='/users/:userName' element={<UserPage />} />
-                <Route path='/listone' element={<Listone />} />
-            </Routes>
+            <div className="body">
+                <Routes>
+                    <Route path='/' element={<UserList />} />
+                    <Route path='/:userName' element={<UserPage />} />
+                    <Route path='/listone' element={<Listone />} />
+                </Routes>
+            </div>
 
             <Footer />
         </div>

@@ -14,23 +14,23 @@ export default function UserPage() {
     const dishesEl = thisUser.dishes.map(dish => <Dish user={userName} data={dish} />)
     return(
         <div className='UserPage'>
-            <div className='UserPage__header'>
-                <div className="UserPage__header__commands">
-                    <span className="delete-icon">[delete]</span>
-                    <Link to="/"><span className="cancel-icon">[X]</span></Link>
+            <div className='UserPage-header'>
+                <div className="commands">
+                    <span className="icon cancel">[delete]</span>
+                    <Link to="/"><span className="icon cancel">[X]</span></Link>
                 </div>
-                <div className="UserPage__header__user">
-                    <div className="UserPage__header__user__avatar">
-                        <img className="UserCard__avatar__img" src={avatar} alt="avatar" />
+                <div className="user-info-container">
+                    <div className="info-avatar">
+                        <img className="info-avatar-img" src={avatar} alt="avatar" />
                     </div>
-                    <div className="UserPage__header__user__name">
+                    <div className="info-name">
                         {thisUser.name}
                     </div>
                 </div>
             </div>
 
-            <div className="UserPage__body">
-                <div className='dish-container'>{dishesEl}</div>
+            <div className="dishList">
+                {dishesEl}
                 <NewDish user={userName}/>
             </div>
 

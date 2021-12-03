@@ -6,15 +6,15 @@ export default function Listone() {
     const listone = getListone()
     console.log(listone)
     const listoneEl = listone.map(dish => (
-        <div className='listone-items'>
-            <span className='dish'>{dish.code}</span>
+        <div className='dishCard'>
+            <span className='dish code'>{dish.code}</span>
             <span>x</span>
-            <span className='dish'>{dish.qnt}</span>
+            <span className='dish qnt'>{dish.qnt}</span>
         </div>
     ))
 
     return(
-        <div className='listone-container'>
+        <div className='Listone'>
             {listoneEl}
         </div>
 

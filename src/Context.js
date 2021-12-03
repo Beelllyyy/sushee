@@ -78,9 +78,16 @@ function ContextProvider({children}) {
             }
         ])
 
-    function addNewUser(newName) {
-        const newUser = {pos: userList.length, name: newName, dishes: []} // creating user object to plug into list of users
-        setUserList(prevUserList => [...prevUserList, newUser])
+    function addNewUser(userName) {
+        // check if name already exists
+        const userIndex = userList.findIndex( user => user.name === userName)
+        // if doesn't exist, add
+        if (userIndex === -1) {
+            const newUser = {pos: userList.length, name: userName, dishes: []} // creating user object to plug into list of users
+            setUserList(prevUserList => [...prevUserList, newUser])
+        }
+        // otherwise return string to handle error
+        return 'existing'
     }
 
     function removeUser(pos) {

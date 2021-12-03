@@ -5,43 +5,42 @@ import {Context} from "../Context";
 export default function NewDish(props) {
     const {addDish} = useContext(Context)
     const [isAdding, setAdding] = useState(false)
-    console.log(`1 ${isAdding}`)
+
     const user = props.user
 
     let refDishCode = React.createRef()
 
     function handleAdd() {
         const newDish = refDishCode.current.value
-        console.log(newDish)
-        const hasAdded = addDish(user, newDish)
-        if (hasAdded === 'existing') {
+        if (newDish) {
+            const hasAdded = addDish(user, newDish)
             refDishCode.current.value = ""
-            refDishCode.current.placeholder = 'Already in list'
-        } else {
-            refDishCode.current.value = ""
+            if (hasAdded === 'existing') {
+                refDishCode.current.placeholder = 'Already in list'
+            }
+            setAdding(false)
         }
-        setAdding(false)
     }
 
     const addElement = isAdding ?
-        <div>
-            <input type={"text"} ref={refDishCode}/>
-            <span onClick={handleAdd}>
+        <div className='newDishCard'>
+            <input type="text" ref={refDishCode}/>
+            <span className='icon confirm' onClick={handleAdd}>
                 [V]
             </span>
-            <span onClick={() => setAdding(false)}>
+            <span className='icon cancel' onClick={() => setAdding(false)}>
                 [X]
             </span>
         </div> :
         <div
-            className="dish"
+            className="icon add"
             onClick={() => setAdding(true)}
         >+</div>
 
     return(
-        <div className="dish-box">
+        <>
             {addElement}
-        </div>
+        </>
     )
 
 }
