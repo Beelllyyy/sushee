@@ -23,17 +23,17 @@ export default function NewDish(props) {
     }
 
     const addElement = isAdding ?
-        <div className='newDishCard'>
+        <div className='newCard'>
             <input type="text" ref={refDishCode}/>
-            <span className='icon confirm' onClick={handleAdd}>
-                [V]
+            <span className='icon-cancel' onClick={() => setAdding(false)}>
+                x
             </span>
-            <span className='icon cancel' onClick={() => setAdding(false)}>
-                [X]
+            <span className='icon-confirm' onClick={handleAdd}>
+                v
             </span>
         </div> :
         <div
-            className="icon add"
+            className="icon-add"
             onClick={() => setAdding(true)}
         >+</div>
 

@@ -20,13 +20,13 @@ export default function NewUser() {
     }
 
     const addElement = isAdding ?
-        <div className='UserCard last'>
+        <div className='newCard last'>
             <input type='text' ref={refUserName}/>
-            <span className='icon confirm' onClick={handleAdd}>
-                [V]
+            <span className='icon-cancel' onClick={() => setAdding(false)}>
+                x
             </span>
-            <span className='icon cancel' onClick={() => setAdding(false)}>
-                [X]
+            <span className='icon-confirm' onClick={handleAdd}>
+                v
             </span>
         </div> :
         <div

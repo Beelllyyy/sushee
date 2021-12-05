@@ -21,7 +21,7 @@ export default function UserPage() {
                 </div>
                 <div className="user-info-container">
                     <div className="info-avatar">
-                        <img className="info-avatar-img" src={avatar} alt="avatar" />
+                        <img className="avatar-img" src={avatar} alt="avatar" />
                     </div>
                     <div className="info-name">
                         {thisUser.name}
@@ -31,9 +31,8 @@ export default function UserPage() {
 
             <div className="dishList">
                 {dishesEl}
-                <NewDish user={userName}/>
             </div>
-
+            <NewDish user={userName}/>
 
 
         </div>
