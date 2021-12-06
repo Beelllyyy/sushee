@@ -1,5 +1,6 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+
 import UserList from './pages/UserList'
 import UserPage from './pages/UserPage'
 import Listone from './pages/Listone'

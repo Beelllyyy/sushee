@@ -10,7 +10,7 @@ export default function UserPage() {
     const {userName} = useParams()
     const {userList} = useContext(Context)
     console.log(userList)
-    const thisUser = userList.find(user => user.name === userName)  // careful to duplicate names possibility
+    const thisUser = userList.find(user => user.name === userName)
     const dishesEl = thisUser.dishes.map(dish => <Dish user={userName} data={dish} />)
     return(
         <div className='UserPage'>
