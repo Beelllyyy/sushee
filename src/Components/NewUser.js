@@ -32,7 +32,7 @@ export default function NewUser() {
         <div
             className="icon-add last"
             onClick={() => setAdding(true)}
-        >+</div>
+        >+ New mangione</div>
 
     return (
         <>
