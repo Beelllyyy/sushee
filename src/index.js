@@ -9,7 +9,7 @@ import {ContextProvider} from "./Context";
 
 ReactDOM.render(
     <ContextProvider>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename={window.location.pathname || ''}>
             <App />
         </Router>
     </ContextProvider>,

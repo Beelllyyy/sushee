@@ -17,9 +17,12 @@ body {
 }
 
 input{
-    border-radius: 20px;
+    border-radius: 8px;
     border: 0;
-    outline: 0
+    outline: 0;
+    text-align: center;
+    font-size: 1.2em;
+    max-width: 50%;
 }
 
 a {
@@ -34,6 +37,30 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 90% 10%;
+}
+
+/* GENERAL */
+
+.icon-confirm,
+.icon-cancel {
+    width: 25px;
+    height: 25px;
+    padding: 0.3em 0.3em;
+    font-size: 1.1em;
+    white-space: nowrap;
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-confirm{
+    background-color: var(--green);
+}
+.icon-cancel{
+    background-color: var(--red);
 }
 
  /* SCREEN LAYOUT */
@@ -55,8 +82,8 @@ a {
 /* PAGES */
 
 .UserList {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     width: 90%;
     gap: 1em;
     justify-self: center;
@@ -70,13 +97,18 @@ a {
     gap: 1.5em;
 }
 .Listone {
-
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+    align-items: center;
 }
 
 /* COMPONENTS*/
 
 /* Usercards */
 .UserCard {
+
     display: grid;
     grid-template-columns: 25% 75%;
     background-color: var(--dark);
@@ -127,54 +159,74 @@ a {
     justify-content: center;
 }
 
-/* BUTTONS */
-.icon-add {
-    width: min-content;
-    padding: 0.3em 0.5em;
-    font-size:  1.4em;
-    font-weight: bold;
-    white-space: nowrap;
-    border-radius: 15px;
-    background-color: var(--pink);
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.footer-btn {
-    background-color: var(--green);
-    color: var(--dark);
-    font-weight: bold;
-    border-radius: 15px;
-    padding: 0.4em 1em;
-}
 
 /* Userpage */
 
-.UserPage-header{
-
-}
-.dishList{
+/* userpage header */
+.header{
+    width: 100%;
+    min-height: 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.commands{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-info-container{
+
+}
+.icon-delete,
+.icon-back {
+    background-color: transparent;
+    border-radius: 7px;
+    color: var(--pink);
+    padding: 0.15em 1em;
+    font-size: 1em;
+}
+.icon-delete {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+.icon-back {
+    border: 2px solid var(--pink);
+    color: var(--pink);
+}
+
+
+/* Userpage dishes */
+
+.dishList{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
 }
 .dishCard{
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.3em;
+    background-color: var(--dark);
+    border-radius: 15px;
 }
 .dish{
-    padding: 0.4em 0.65em;
-    font-size:  1.2em;
+    padding: 0.3em 0.55em;
+    font-size:  1.3em;
     width: min-content;
     white-space: nowrap;
     border-radius: 15px;
-    background-color: var(--dark);
+
     color: var(--white);
     font-weight: 600;
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% 10% 50%;
     align-items: center;
     justify-content: center;
 }
@@ -182,6 +234,7 @@ a {
     color: var(--white);
 }
 .qnt{
+    width: 100%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -208,34 +261,64 @@ a {
     background-color: var(--red);
     left: 5px;
 }
+
+
 .newCard{
-    width: 90%;
+    width: 100%;
     display: flex;
-    gap: 0.4em;
+    padding: 1em 0;
     justify-content: space-around;
     background-color: var(--dark);
-    border-radius: 30px;
-    padding: 0.8em 0.5em;
+    border-radius: 15px;
+
+}
+.UserPage .newCard{
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.icon-confirm,
-.icon-cancel {
-    width: 25px;
-    height: 25px;
-    padding: 0.3em 0.3em;
-    font-size: 1.1em;
+/* Listone */
+
+.listone-header{
+    width: 90%;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: end;
+
+}
+
+.listone-container{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+}
+
+/* BUTTONS */
+.icon-add {
+    width: min-content;
+    padding: 0.3em 0.5em;
+    font-size:  1.4em;
+    font-weight: bold;
     white-space: nowrap;
-    border-radius: 50%;
-    color: var(--white);
-    font-weight: 600;
+    border-radius: 15px;
+    background-color: var(--pink);
+    color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.icon-confirm{
+.footer-btn {
     background-color: var(--green);
+    color: var(--dark);
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 0.4em 1em;
 }
-.icon-cancel{
-    background-color: var(--red);
-}
+

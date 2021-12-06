@@ -17,14 +17,15 @@ export default function NewDish(props) {
             refDishCode.current.value = ""
             if (hasAdded === 'existing') {
                 refDishCode.current.placeholder = 'Already in list'
+            } else {
+                setAdding(false)
             }
-            setAdding(false)
         }
     }
 
     const addElement = isAdding ?
         <div className='newCard'>
-            <input type="text" ref={refDishCode}/>
+            <input type="text" ref={refDishCode} placeholder='Dish code'/>
             <span className='icon-cancel' onClick={() => setAdding(false)}>
                 x
             </span>

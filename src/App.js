@@ -1,6 +1,5 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
-
+import {Routes, Route} from 'react-router-dom'
 import UserList from './pages/UserList'
 import UserPage from './pages/UserPage'
 import Listone from './pages/Listone'
@@ -11,7 +10,7 @@ function App() {
         <div className="App">
             <div className="body">
                 <Routes>
-                    <Route path='/' element={<UserList />} />
+                    <Route exact path='/' element={<UserList />} />
                     <Route path='/:userName' element={<UserPage />} />
                     <Route path='/listone' element={<Listone />} />
                 </Routes>

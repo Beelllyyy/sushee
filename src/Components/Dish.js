@@ -24,21 +24,21 @@ export default function Dish(props) {
                 </div>
                 <span className='x'>x</span>
                 <div className='qnt'>
-                {isEditing ?
-                <div className='btn-minus'>
-                    <span onClick={() => subQnt(user, code)}>-</span>
-                </div>
-                    : null
-                }
-                <div className="dish">
-                    {qnt}
-                </div>
-                {isEditing ?
-                    <div className='btn-plus'>
-                        <span onClick={() => addQnt(user, code)}>+</span>
-                    </div> :
-                    null
-                }
+                    {isEditing ?
+                        <div className='btn-minus'>
+                            <span onClick={() => subQnt(user, code)}>-</span>
+                        </div> :
+                        null
+                    }
+                    <div className="dish">
+                        {qnt}
+                    </div>
+                    {isEditing ?
+                        <div className='btn-plus'>
+                            <span onClick={() => addQnt(user, code)}>+</span>
+                        </div> :
+                        null
+                    }
                 </div>
         </div>
     )

@@ -21,7 +21,7 @@ export default function NewUser() {
 
     const addElement = isAdding ?
         <div className='newCard last'>
-            <input type='text' ref={refUserName}/>
+            <input type='text' ref={refUserName} placeholder='User name'/>
             <span className='icon-cancel' onClick={() => setAdding(false)}>
                 x
             </span>
