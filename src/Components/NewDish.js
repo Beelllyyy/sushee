@@ -1,6 +1,6 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useRef} from 'react'
 import {Context} from "../Context";
-
+import useOnClickOutside from '../Hooks/useOutsideClick'
 
 export default function NewDish(props) {
     const {addDish} = useContext(Context)
@@ -9,6 +9,9 @@ export default function NewDish(props) {
     const user = props.user
 
     let refDishCode = React.createRef()
+
+    const refCard = useRef()
+    useOnClickOutside(refCard, () => setAdding(false))
 
     function handleAdd() {
         let newDish = refDishCode.current.value
@@ -26,7 +29,7 @@ export default function NewDish(props) {
     }
 
     const addElement = isAdding ?
-        <div className='newCard'>
+        <div className='newCard' ref={refCard}>
             <input type="text" ref={refDishCode} placeholder='Dish code'/>
             <span className='icon-cancel' onClick={() => setAdding(false)}>
                 x

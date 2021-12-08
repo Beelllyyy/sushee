@@ -27,6 +27,7 @@ input{
 
 a {
     text-decoration: none;
+    color: inherit
 }
 
 .App {
@@ -330,3 +331,17 @@ a {
     border: 2px solid var(--green);
     color: var(--green);
 }
+
+
+/*
+@media screen and (min-width: 600px) {
+    .UserPage {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+        align-items: center;
+        gap: 1.5em;
+    }
+}
+*/

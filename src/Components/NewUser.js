@@ -1,11 +1,16 @@
-import React, {useContext, useState} from 'react'
+import userEvent from '@testing-library/user-event';
+import React, {useContext, useState, useRef} from 'react'
 import {Context} from "../Context";
+import useOnClickOutside from '../Hooks/useOutsideClick'
 
 export default function NewUser() {
     const {addNewUser} = useContext(Context)
     const [isAdding, setAdding] = useState(false)
 
     let refUserName = React.createRef()
+
+    const refCard = useRef()
+    useOnClickOutside(refCard, () => setAdding(false))
 
     function handleAdd() {
         const newUser = refUserName.current.value
@@ -20,7 +25,7 @@ export default function NewUser() {
     }
 
     const addElement = isAdding ?
-        <div className='newCard last'>
+        <div className='newCard last' ref={refCard}>
             <input type='text' ref={refUserName} placeholder='User name'/>
             <span className='icon-cancel' onClick={() => setAdding(false)}>
                 x
