@@ -11,7 +11,9 @@ export default function NewDish(props) {
     let refDishCode = React.createRef()
 
     function handleAdd() {
-        const newDish = refDishCode.current.value
+        let newDish = refDishCode.current.value
+        // Input integrity: all codes uppercase
+        newDish = newDish.toUpperCase()
         if (newDish) {
             const hasAdded = addDish(user, newDish)
             refDishCode.current.value = ""
@@ -34,7 +36,7 @@ export default function NewDish(props) {
             </span>
         </div> :
         <div
-            className="icon-add"
+            className="button-add add-dish"
             onClick={() => setAdding(true)}
         >+</div>
 

@@ -21,8 +21,8 @@ export default function UserPage() {
         <div className='UserPage'>
             <div className='header'>
                 <div className="commands">
-                    <Link to='/'><span className="icon-delete" onClick={handleDelete}>delete</span></Link>
-                    <Link to="/"><span className="icon-back">back</span></Link>
+                    <Link to='/'><span className="button button-delete" onClick={handleDelete}>delete</span></Link>
+                    <Link to="/"><span className="button button-back">back</span></Link>
                 </div>
                 <div className="user-info-container">
                     <div className="info-avatar">

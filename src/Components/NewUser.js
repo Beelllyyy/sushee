@@ -30,7 +30,7 @@ export default function NewUser() {
             </span>
         </div> :
         <div
-            className="icon-add last"
+            className="button-add last"
             onClick={() => setAdding(true)}
         >+ New mangione</div>
 

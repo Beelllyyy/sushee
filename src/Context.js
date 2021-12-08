@@ -4,7 +4,11 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
 
-    const [userList, setUserList] = useState([])
+    const [userList, setUserList] = useState(() => {
+        const saved = localStorage.getItem('session')
+        const initialValue = JSON.parse(saved)
+        return initialValue || []
+    })
 
     function addNewUser(userName) {
         // check if name already exists
@@ -87,6 +91,7 @@ function ContextProvider({children}) {
     return(
         <Context.Provider value={{
             userList,
+            setUserList,
             addNewUser,
             removeUser,
             addQnt,

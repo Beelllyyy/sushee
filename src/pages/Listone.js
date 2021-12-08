@@ -18,7 +18,7 @@ export default function Listone() {
     return(
         <div className="Listone">
             <div className='listone-header'>
-                <Link to="/"><span className="icon-back">back</span></Link>
+                <Link to="/"><span className="button button-back">back</span></Link>
             </div>
             <div className='listone-container'>
                 {listoneEl}

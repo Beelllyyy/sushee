@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useEffect, useContext} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import UserList from './pages/UserList'
 import UserPage from './pages/UserPage'
 import Listone from './pages/Listone'
 import Footer from './pages/Footer'
+import { Context } from './Context'
 function App() {
+
+    const {userList} = useContext(Context)
+
+    useEffect(() => localStorage.setItem("session", JSON.stringify(userList)), [userList])
 
     return (
         <div className="App">
@@ -15,7 +20,6 @@ function App() {
                     <Route path='/listone' element={<Listone />} />
                 </Routes>
             </div>
-
             <Footer />
         </div>
     );

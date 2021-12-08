@@ -181,22 +181,7 @@ a {
 .user-info-container{
 
 }
-.icon-delete,
-.icon-back {
-    background-color: transparent;
-    border-radius: 7px;
-    color: var(--pink);
-    padding: 0.15em 1em;
-    font-size: 1em;
-}
-.icon-delete {
-    border: 2px solid var(--red);
-    color: var(--red);
-}
-.icon-back {
-    border: 2px solid var(--pink);
-    color: var(--pink);
-}
+
 
 
 /* Userpage dishes */
@@ -208,9 +193,13 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
+    overflow: scroll;
 }
 .dishCard{
     display: flex;
+    min-width: 190px;
+    padding: 0.5em 0;
+    width: 30%;
     align-items: center;
     gap: 0.3em;
     background-color: var(--dark);
@@ -218,11 +207,10 @@ a {
 }
 .dish{
     padding: 0.3em 0.55em;
-    font-size:  1.3em;
+    font-size:  1.5em;
     width: min-content;
     white-space: nowrap;
     border-radius: 15px;
-
     color: var(--white);
     font-weight: 600;
     display: grid;
@@ -241,25 +229,23 @@ a {
 }
 .btn-plus,
 .btn-minus{
-    height: 10px;
-    width: 10px;
-    font-size: 0.9em;
-    padding: 0.2em 0.2em;
+    height: 25px;
+    width: 25px;
+    font-size: 1.5em;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top:50%;
     font-weight: bold;
 }
 .btn-plus{
-    background-color: var(--green);
-    right: 5px;
+    color: var(--green);
+    border: 2px solid var(--green)
+
 }
 .btn-minus{
-    background-color: var(--red);
-    left: 5px;
+    color: var(--red);
+    border: 2px solid var(--red)
 }
 
 
@@ -300,7 +286,7 @@ a {
 }
 
 /* BUTTONS */
-.icon-add {
+.button-add {
     width: min-content;
     padding: 0.3em 0.5em;
     font-size:  1.4em;
@@ -313,6 +299,9 @@ a {
     align-items: center;
     justify-content: center;
 }
+.add-dish {
+    padding: 0.5em 0.7em;
+}
 
 .footer-btn {
     background-color: var(--green);
@@ -322,3 +311,22 @@ a {
     padding: 0.4em 1em;
 }
 
+.button {
+    background-color: transparent;
+    border-radius: 7px;
+    color: var(--pink);
+    padding: 0.15em 1em;
+    font-size: 1em;
+}
+.button-delete {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+.button-back {
+    border: 2px solid var(--pink);
+    color: var(--pink);
+}
+.button-save {
+    border: 2px solid var(--green);
+    color: var(--green);
+}
