@@ -2,11 +2,12 @@
 
 #root {
     --dark: #282a36;
+    --gray: #44475a;
     --white: #f8f8f2;
+    --blue: #383a59;
     --green: #50fa7b;
     --pink: #ff79c6;
-    --blue: #383a59;
-    --gray: #44475a;
+    --purple: #bd93f9;
     --red: #ff5555;
 }
 
@@ -78,6 +79,7 @@ a {
     justify-content: center;
     background-color: var(--dark);
     border-radius: 7px 7px 0 0;
+    gap: 1em;
 }
 
 /* PAGES */
@@ -104,6 +106,17 @@ a {
     width: 100%;
     align-items: center;
 }
+
+.Login,
+.Signup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+
+}
+
 
 /* COMPONENTS*/
 
@@ -284,6 +297,64 @@ a {
     flex-wrap: wrap;
     gap: 1em;
     align-items: center;
+}
+
+/* LOGIN & SIGN UP */
+.form{
+    width: 100%;
+    align-self: center;
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+.form-title{
+    color: var(--green);
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 1.5em;
+
+}
+.form-row {
+    display: flex;
+    justify-content: space-around;
+}
+.form-label {
+    width: 30%;
+}
+.form-text {
+    height: 25px;
+    border-radius: 30px;
+    color: var(--gray);
+    font-size: 1em;
+}
+.form-submit{
+    width: 110px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: var(--dark);
+    font-weight: bold;
+    border-radius: 30px;
+    outline: none;
+    border: 0;
+}
+.form-extra{
+    color: var(--white);
+}
+.form-extra-link{
+    color: var(--pink)
+}
+.form-error{
+    border: 1px solid var(--red);
+    border-radius: 7px;
+    color: var(--red);
+    padding: 0.8em 2em;
 }
 
 /* BUTTONS */

@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import React, {useContext, useState, useRef} from 'react'
-import {Context} from "../Context";
+import {Context} from "../contexts/Context";
 import useOnClickOutside from '../Hooks/useOutsideClick'
 
 export default function NewUser() {

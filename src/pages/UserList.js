@@ -1,5 +1,5 @@
 import React, {useState, useContext, useRef} from 'react'
-import {Context} from '../Context'
+import {Context} from '../contexts/Context'
 import User from '../Components/User'
 import NewUser from '../Components/NewUser'
 import useOnClickOutside from '../Hooks/useOutsideClick'

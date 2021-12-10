@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {Context} from '../Context'
+import {Context} from '../contexts/Context'
 import {useParams, Link} from 'react-router-dom'
 import Dish from '../Components/Dish'
 import NewDish from '../Components/NewDish'

@@ -4,7 +4,10 @@ import UserList from './pages/UserList'
 import UserPage from './pages/UserPage'
 import Listone from './pages/Listone'
 import Footer from './pages/Footer'
-import { Context } from './Context'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import Profile from './pages/Profile'
+import { Context } from './contexts/Context'
 function App() {
 
     const {userList} = useContext(Context)
@@ -18,6 +21,9 @@ function App() {
                     <Route exact path='/' element={<UserList />} />
                     <Route path='/:userName' element={<UserPage />} />
                     <Route path='/listone' element={<Listone />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/profile' element={<Profile />} />
                 </Routes>
             </div>
             <Footer />
